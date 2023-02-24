@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div>
+    <div className="App">
       <h1>Expense Tracker</h1>
     </div>
   );
