@@ -20,13 +20,27 @@ export function dashboardLoader() {
 // action
 export async function dashboardAction({ request }) {
   const data = await request.formData();
-  const formData = Object.fromEntries(data);
-  try {
-    // throw new Error("Ya done");
-    localStorage.setItem("userName", JSON.stringify(formData.userName));
-    return toast.success(`Welcome, ${formData.userName}`);
-  } catch (e) {
-    throw new Error("There was a problem creating your account.");
+  const { _action, ...values } = Object.fromEntries(data);
+  // console.log(_action);
+  // new user submission
+  if (_action === "newUser") {
+    try {
+      // throw new Error("Ya done");
+      localStorage.setItem("userName", JSON.stringify(values.userName));
+      return toast.success(`Welcome, ${values.userName}`);
+    } catch (e) {
+      throw new Error("There was a problem creating your account.");
+    }
+  }
+
+  if (_action === "createBudget") {
+    try {
+      // create budget
+      throw new Error("You failed!");
+      return toast.success("Budget created!");
+    } catch (e) {
+      throw new Error("There was a problem creating your budget.");
+    }
   }
 }
 
