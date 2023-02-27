@@ -7,7 +7,7 @@ import AddBudgetForm from "../components/AddBudgetForm";
 import Intro from "../components/Intro";
 
 // helper functions
-import { fetchData } from "../helpers";
+import { createBudget, fetchData } from "../helpers";
 
 // Loader
 export function dashboardLoader() {
@@ -36,7 +36,10 @@ export async function dashboardAction({ request }) {
   if (_action === "createBudget") {
     try {
       // create budget
-      throw new Error("You failed!");
+      createBudget({
+        name: values.newBudget,
+        amount: values.newBudgetAmount,
+      });
       return toast.success("Budget created!");
     } catch (e) {
       throw new Error("There was a problem creating your budget.");
