@@ -1,4 +1,4 @@
-export const awaait = () =>
+export const waait = () =>
   new Promise((res) => setTimeout(res, Math.random() * 2000));
 
 //genrateRandom Color
