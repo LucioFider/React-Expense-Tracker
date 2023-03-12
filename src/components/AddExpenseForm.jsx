@@ -73,7 +73,7 @@ const AddExpenseForm = ({ budgets }) => {
             <span>Submitting...</span>
           ) : (
             <>
-              <span>Create budget</span>
+              <span>Add Expense</span>
               <AiOutlinePlusCircle width={20} />
             </>
           )}
